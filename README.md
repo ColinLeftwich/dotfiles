@@ -4,10 +4,7 @@ nixos dotfiles for my personal devices
 # TODO
 - [ ] Setup automatic garbage collection
 - [ ] Setup restic backup
-- [ ] Create Projects Directory
-- [ ] Setup openssh with sane defaults
-- [ ] Auto fetch ssh pub keys
-- [ ] Add install and config virtmanager
+- [ ] Install and configure virtmanager
 
 # Software to add
 - anki
