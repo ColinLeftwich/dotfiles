@@ -1,11 +1,6 @@
 # Nixos Dotfiles
 nixos dotfiles for my personal devices
 
-# TODO
-- [ ] Setup automatic garbage collection
-- [ ] Setup restic backup
-- [ ] Install and configure virtmanager
-
 # Software to add
 - anki
 - zotero
