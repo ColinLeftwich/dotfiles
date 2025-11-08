@@ -1,8 +1,12 @@
-{pkgs, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   home.username = "colin";
   home.homeDirectory = "/home/colin";
+
   home.stateVersion = "25.05"; # Please read the comment before changing.
-  fonts.fontconfig.enable = true;
 
   programs.zsh = {
     enable = true;
@@ -30,16 +34,6 @@
     enableZshIntegration = true;
   };
 
-  programs.zed-editor = {
-    enable = true;
-    extensions = [
-      "nix"
-    ];
-    extraPackages = with pkgs; [
-      nixd
-    ];
-  };
-
   programs.alacritty = {
     enable = true;
     theme = "github_dark_high_contrast";
@@ -53,33 +47,57 @@
       };
 
       terminal.shell = "zsh";
-      # env.shell = "nu";
+      env.shell = "zsh";
     };
   };
 
-  # Packages
+  programs.zed-editor = {
+    enable = true;
+    extensions = [
+      "nix"
+    ];
+    extraPackages = with pkgs; [
+      nixd
+    ];
+  };
+
+  programs.git = {
+    enable = true;
+    settings.user = {
+      name = "Colin Leftwich";
+      email = "leftwichcolin@protonmail.com";
+    };
+  };
+
   home.packages = with pkgs; [
     vim
     neovim
     ranger
-    gnupg
+    curl
+    tmux
+    htop
+    rsync
 
-    git
-    just
-    alejandra
-
+    fzf
     zoxide
     eza
+
+    gnupg
+    just
+    nettools
+
+    alejandra
+
     nerd-fonts.meslo-lg
 
+    kdePackages.kate
+
     wireshark
-    kicad
   ];
 
   home.sessionVariables = {
     EDITOR = "nvim";
   };
 
-  # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
