@@ -91,6 +91,9 @@
     isNormalUser = true;
     description = "Colin Leftwich";
     extraGroups = ["networkmanager" "wheel"];
+    openssh.authorizedKeys.keyFiles = [
+      (builtins.path { path = ./colin.keys; })
+    ];
   };
 
   home-manager = {
@@ -136,7 +139,11 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
+  services.openssh = {
+    enable = true;
+    settings.PasswordAuthentication = false;
+    settings.PermitRootLogin = "no";
+  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
