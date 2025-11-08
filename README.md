@@ -1,4 +1,5 @@
-# nixos dotfiles for personal devices
+# Nixos Dotfiles
+nixos dotfiles for my personal devices
 
 # TODO
 - [ ] Setup automatic garbage collection
