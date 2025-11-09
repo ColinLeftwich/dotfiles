@@ -18,6 +18,12 @@
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
+  system.autoUpgrade = {
+    enable = true;
+    allowReboot = true;
+    dates = "03:00";
+  };
+
   nix.gc = {
     automatic = true;
     dates = "day";
@@ -92,7 +98,7 @@
     description = "Colin Leftwich";
     extraGroups = ["networkmanager" "wheel"];
     openssh.authorizedKeys.keyFiles = [
-      (builtins.path { path = ./colin.keys; })
+      (builtins.path {path = ./colin.keys;})
     ];
   };
 
@@ -129,6 +135,7 @@
     vim
     zsh
     nvtopPackages.nvidia
+    libnotify
   ];
 
   programs.gnupg.agent = {
