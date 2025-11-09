@@ -127,6 +127,10 @@
 
   # Install firefox.
   programs.firefox.enable = true;
+  programs.virt-manager.enable = true;
+  users.groups.libvirtd.members = ["colin"];
+  virtualisation.libvirtd.enable = true;
+  virtualisation.spiceUSBRedirection.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
