@@ -140,6 +140,7 @@
     zsh
     nvtopPackages.nvidia
     libnotify
+    exfatprogs
   ];
 
   programs.gnupg.agent = {
