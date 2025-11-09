@@ -104,21 +104,15 @@
     htop
     rsync
     libnotify
-
     fzf
     zoxide
     eza
-
     gnupg
     just
     nettools
-
     alejandra
-
     nerd-fonts.meslo-lg
-
     kdePackages.kate
-
     wireshark
   ];
 
