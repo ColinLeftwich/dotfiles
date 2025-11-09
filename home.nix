@@ -114,6 +114,7 @@
     nerd-fonts.meslo-lg
     kdePackages.kate
     wireshark
+    mpv
   ];
 
   home.sessionVariables = {
