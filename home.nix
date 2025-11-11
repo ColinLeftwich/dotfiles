@@ -97,6 +97,7 @@
     };
   };
 
+  nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [
     vim
     neovim
@@ -117,10 +118,17 @@
     kdePackages.kate
     wireshark
     mpv
+    signal-desktop
+    vesktop
+    popsicle
+    whois
+    pciutils
+    kdePackages.filelight
+    krita
   ];
 
   home.sessionVariables = {
-    EDITOR = "nvim";
+    EDITOR = "zeditor";
   };
 
   programs.home-manager.enable = true;
