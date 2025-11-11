@@ -19,10 +19,16 @@
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
+  environment.etc."gitconfig".text = ''
+    [safe]
+        directory = /home/colin/dotfiles
+  '';
+  environment.etc."nixos".source = "/home/colin/dotfiles";
   system.autoUpgrade = {
     enable = true;
     allowReboot = true;
     dates = "03:00";
+    flake = "/etc/nixos#hydrogen";
   };
 
   nix.gc = {
