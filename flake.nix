@@ -20,7 +20,7 @@
     nixpkgs,
     ...
   } @ inputs: {
-    nixosConfigurations.hydrogen = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.workstation = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
         ./configuration.nix

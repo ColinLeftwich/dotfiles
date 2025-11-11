@@ -14,7 +14,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "hydrogen";
+  networking.hostName = "workstation";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -28,7 +28,7 @@
     enable = true;
     allowReboot = true;
     dates = "03:00";
-    flake = "/etc/nixos#hydrogen";
+    flake = "/etc/nixos#workstation";
   };
 
   nix.gc = {
