@@ -1,12 +1,14 @@
 {
   config,
   pkgs,
+  # inputs,
   ...
 }: {
   home.username = "colin";
   home.homeDirectory = "/home/colin";
 
   home.stateVersion = "25.05"; # Please read the comment before changing.
+  # imports = [inputs.sops-nix.homeManagerModules.sops];
 
   systemd.user.services."auto-upgrade-warning" = {
     Unit = {

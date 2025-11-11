@@ -6,6 +6,7 @@
 }: {
   imports = [
     ./hardware-configuration.nix
+    inputs.sops-nix.nixosModules.sops
     inputs.home-manager.nixosModules.default
   ];
 
@@ -28,6 +29,34 @@
     automatic = true;
     dates = "day";
     options = "--delete-older-than 7d";
+  };
+
+  sops.defaultSopsFile = ./secrets/secrets.yaml;
+  sops.defaultSopsFormat = "yaml";
+  sops.age.keyFile = "/home/colin/.config/sops/age/keys.txt";
+
+  sops.secrets = {
+    "minio/aws_access_key_id" = {};
+    "minio/aws_secret_access_key" = {};
+    "restic/password" = {};
+  };
+
+  sops.templates."minio-env".content = ''
+    AWS_ACCESS_KEY_ID=${config.sops.placeholder."minio/aws_access_key_id"}
+    AWS_SECRET_ACCESS_KEY=${config.sops.placeholder."minio/aws_secret_access_key"}
+  '';
+
+  services.restic.backups.documents = {
+    repository = "s3:http://192.168.1.122:9000/documents";
+    paths = ["/home/colin/Documents/"];
+    passwordFile = config.sops.secrets."restic/password".path;
+    environmentFile = config.sops.templates."minio-env".path;
+    timerConfig.OnCalendar = "daily";
+    pruneOpts = [
+      "--keep-daily 7"
+      "--keep-weekly 4"
+      "--keep-monthly 6"
+    ];
   };
 
   # Configure network proxy if necessary
@@ -139,6 +168,8 @@
     vim
     zsh
     nvtopPackages.nvidia
+    restic
+    sops
     libnotify
     exfatprogs
   ];
