@@ -1,0 +1,32 @@
+{pkgs, ...}: {
+  home.packages = with pkgs; [
+    neovim
+    yazi
+    curl
+    tmux
+    htop
+    rsync
+    libnotify
+    fzf
+    starship
+    zoxide
+    eza
+    gnupg
+    just
+    nettools
+    alejandra
+    nerd-fonts.meslo-lg
+    kdePackages.kate
+    wireshark
+    mpv
+    signal-desktop
+    vesktop
+    popsicle
+    whois
+    pciutils
+    kdePackages.filelight
+    krita
+    nvtopPackages.nvidia
+    code-cursor
+  ];
+}

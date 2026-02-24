@@ -19,14 +19,15 @@
     self,
     nixpkgs,
     ...
-  } @ inputs: {
-    nixosConfigurations.workstation = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
-      modules = [
-        ./configuration.nix
-        inputs.home-manager.nixosModules.default
-        inputs.sops-nix.nixosModules.sops
-      ];
+  } @ inputs: let
+    mkNixOSConfig = path:
+      nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
+        modules = [path];
+      };
+  in {
+    nixosConfigurations = {
+      workstation = mkNixOSConfig ./machines/workstation/configuration.nix;
     };
   };
 }
