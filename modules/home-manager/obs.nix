@@ -7,6 +7,6 @@
         cudaSupport = true;
       }
     );
-    enableVirtualCamera = true;
   };
+  # programs.obs-studio.enableVirtualCamera = true;
 }

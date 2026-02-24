@@ -35,6 +35,7 @@
         ../../modules/home-manager/zeditor.nix
         ../../modules/home-manager/git.nix
         ../../modules/home-manager/auto-upgrade-warning.nix
+        ../../modules/home-manager/obs.nix
       ];
     };
   };
