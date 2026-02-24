@@ -13,6 +13,7 @@
     ../../modules/nixos/exfat.nix
 
     ../../services/restic.nix
+    ../../services/tailscale.nix
   ];
 
   # Bootloader (EFI)
