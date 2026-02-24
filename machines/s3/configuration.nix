@@ -10,6 +10,7 @@
     # ../../modules/nixos/exfat.nix
 
     ../../services/minio.nix
+    ../../services/tailscale.nix
   ];
 
   # Bootloader (legacy BIOS/GRUB)
@@ -24,6 +25,7 @@
     users.colin = {
       imports = [
         ../../modules/home-manager/base.nix
+        ../../modules/home-manager/packages.nix
         ../../modules/home-manager/shells.nix
         ../../modules/home-manager/git.nix
       ];
