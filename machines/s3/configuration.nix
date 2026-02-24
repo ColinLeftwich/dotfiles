@@ -18,5 +18,17 @@
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda";
 
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    users.colin = {
+      imports = [
+        ../../modules/home-manager/base.nix
+        ../../modules/home-manager/shells.nix
+        ../../modules/home-manager/git.nix
+      ];
+    };
+  };
+
   networking.hostName = "s3";
 }

@@ -28,6 +28,7 @@
   in {
     nixosConfigurations = {
       workstation = mkNixOSConfig ./machines/workstation/configuration.nix;
+      s3 = mkNixOSConfig ./machines/s3/configuration.nix;
     };
   };
 }
