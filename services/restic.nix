@@ -17,7 +17,7 @@
   '';
 
   services.restic.backups.documents = {
-    repository = "s3:http://192.168.1.156:9000/documents";
+    repository = "s3:http://192.168.1.166:9000/documents";
     paths = ["/home/colin/Documents/"];
     passwordFile = config.sops.secrets."restic/password".path;
     environmentFile = config.sops.templates."minio-env".path;
