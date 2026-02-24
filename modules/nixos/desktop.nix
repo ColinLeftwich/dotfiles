@@ -18,4 +18,14 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
+
+  # Steam
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
+  };
+
+  hardware.graphics.enable32Bit = true;
+  hardware.steam-hardware.enable = true;
 }

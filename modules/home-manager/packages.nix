@@ -28,5 +28,15 @@
     krita
     nvtopPackages.nvidia
     code-cursor
+    delta
+    python314
+    uv
+    firefox
+    ffmpeg
+    obsidian
+    ueberzugpp
+    ripgrep
+    typst
+    protonvpn-gui
   ];
 }
