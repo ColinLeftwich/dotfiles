@@ -19,6 +19,9 @@
     pulse.enable = true;
   };
 
+  # Tailscale
+  services.tailscale.enable = true;
+
   # Steam
   programs.steam = {
     enable = true;

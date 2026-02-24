@@ -21,6 +21,8 @@
     settings.PasswordAuthentication = false;
     settings.PermitRootLogin = "no";
   };
+  # networking.firewall.enable = true;
+  # networking.firewall.allowedTCPPorts = [22];
 
   time.timeZone = "America/Chicago";
   i18n.defaultLocale = "en_US.UTF-8";
