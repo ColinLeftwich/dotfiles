@@ -37,11 +37,13 @@
   };
 
   networking.networkmanager.enable = true;
+  programs.zsh.enable = true;
 
   users.users.colin = {
     isNormalUser = true;
     description = "Colin Leftwich";
     extraGroups = ["networkmanager" "wheel"];
+    shell = pkgs.zsh;
     openssh.authorizedKeys.keyFiles = [
       (builtins.path {path = ../../colin.keys;})
     ];
