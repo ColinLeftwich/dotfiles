@@ -21,6 +21,10 @@
     mpv
     signal-desktop
     vesktop
+    noto-fonts
+    noto-fonts-color-emoji
+    noto-fonts-cjk-sans
+    noto-fonts-cjk-serif
     popsicle
     whois
     pciutils
