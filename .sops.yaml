@@ -1,7 +1,9 @@
 keys:
   - &workstation age15gc99padc0qpaj9n8d32dtsyy0u5rufxqxwfkg7vdrxqj92z892qzm2u24
+  - &s3 age16e6k2g7yh2y36ekkjtrppfskfcnm5wl7pc0du093lns8etzh259qj3elv4
 creation_rules:
   - path_regex: secrets/secrets.yaml$
     key_groups:
       - age:
           - *workstation
+          - *s3
