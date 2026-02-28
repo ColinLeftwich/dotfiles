@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   services.xserver.enable = true;
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
@@ -17,6 +17,12 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
+  };
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = [pkgs.xdg-desktop-portal-gtk];
+    config.common.default = "gtk";
   };
 
   # Steam
