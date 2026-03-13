@@ -29,7 +29,6 @@
     whois
     pciutils
     kdePackages.filelight
-    krita
     nvtopPackages.nvidia
     code-cursor
     delta
