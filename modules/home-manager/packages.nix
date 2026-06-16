@@ -40,6 +40,6 @@
     ueberzugpp
     ripgrep
     typst
-    protonvpn-gui
+    # protonvpn-gui
   ];
 }

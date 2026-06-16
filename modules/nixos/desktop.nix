@@ -1,7 +1,5 @@
 {pkgs, ...}: {
   services.xserver.enable = true;
-  services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
 
   services.xserver.xkb = {
     layout = "us";
@@ -25,7 +23,6 @@
     config.common.default = "gtk";
   };
 
-  # Steam
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true;

@@ -8,6 +8,7 @@
     ../../modules/nixos/base.nix
     ../../modules/nixos/hardware.nix
     ../../modules/nixos/desktop.nix
+    ../../modules/nixos/kde.nix
     ../../modules/nixos/virtualization.nix
     ../../modules/nixos/auto-upgrade.nix
     ../../modules/nixos/exfat.nix
@@ -31,6 +32,7 @@
       imports = [
         ../../modules/home-manager/base.nix
         ../../modules/home-manager/packages.nix
+        ../../modules/home-manager/kde.nix
         ../../modules/home-manager/shells.nix
         ../../modules/home-manager/alacritty.nix
         ../../modules/home-manager/zeditor.nix
