@@ -1,0 +1,49 @@
+copy dotfiles
+move configuration and hardware
+generate ssh and age key
+
+ssh-keygen -t ed25519
+
+mkdir -p ~/.config/sops/age
+# age-keygen -o ~/.config/sops/age/keys.txt
+nix run nixpkgs#ssh-to-age -- -private-key -i ~/.ssh/private > ~/.config/sops/age/keys.txt
+
+nix --extra-experimental-features "nix-command flakes" run nixpkgs#ssh-to-age -- -private-key -i /home/colin/.ssh/id_ed25519 > /home/colin/.config/sops/age/keys.txt
+
+edit .sops.yaml
+
+copy over age key
+
+sops updatekeys secrets/secrets.yaml
+
+update flake.nix
+
+git add folders
+
+
+
+nix-shell -p neovim ranger age sops git just alejandra
+sudo nvim /etc/nixos/
+# install git, curl, neovim
+# enable openssh just
+# set hostname
+# nix.settings.experimental-features = [ "nix-command" "flakes" ];
+git clone git@github.com:ColinLeftwich/dotfiles.git
+nix --extra-experimental-features "nix-command flakes" run nixpkgs#ssh-to-age -- -private-key -i /home/colin/.ssh/id_ed25519 > /home/colin/.config/sops/age/keys.txt
+age-keygen -o ~/.config/sops/age/keys.txt
+cd dotfiles
+
+# On working nixos host
+copy age key and paste into .sops.yaml on a host that can decrypt
+sops updatekeys secrets/secrets.yaml
+git add .sops.yaml
+git add secrets/secrets.yaml
+git commit -m "
+git push
+
+git pull
+edit flake.nix to add hostname and import
+git add
+edit .env
+git
+just test
